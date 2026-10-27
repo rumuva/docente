@@ -25,3 +25,5 @@ header,header.solid,body.detail header{background:#fffaf4f5;color:#272b30;border
 .fusion video{aspect-ratio:16/9;height:auto;object-fit:contain;object-position:center;background:#f4e9da;padding-top:24px;box-sizing:border-box}
 .ai-hero-note{position:absolute;right:2rem;bottom:1rem;z-index:2;background:#fff9;color:#26323b;padding:.35rem .6rem;font-size:.7rem;border-radius:4px;max-width:42%}.ai-footer-note{font-size:.85rem;line-height:1.6;padding-top:1rem}.detail-main a{text-decoration:underline}
 @media(min-width:901px){.hero-photo{height:calc(100% - 135px);width:44%;right:3%}}
+
+.image-disclosure{font-size:.8rem;line-height:1.5;background:#fff;color:#3e454b;padding:.7rem;margin:0}.course-card a{display:block;margin-top:1rem}img{max-width:100%}a,button,input,select,textarea{touch-action:manipulation}:focus-visible{outline:3px solid #a33b29;outline-offset:4px}html{scroll-padding-top:110px}@media(max-width:600px){.contact-float{font-size:12px;bottom:12px;right:12px}.detail-layout{display:block}.hero-actions .btn{max-width:100%}input,select,textarea{font-size:16px}body{overflow-wrap:break-word}}
