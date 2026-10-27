@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="../assets/imagen-1.webp">
+  <title>Kit de Promoción y Firma de Gmail | Rubén Muñoz Valadés</title>
+  <style>
+    :root {
+      --red: #ad4437;
+      --red-dark: #853327;
+      --navy: #17222d;
+      --ink: #232930;
+      --muted: #5d646b;
+      --cream: #f5f2ee;
+      --line: #e2ddd6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 36px 24px;
+      text-align: center;
+      border-bottom: 4px solid var(--red);
+    }
+    header p {
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 11px;
+      color: #e8b19b;
+      font-weight: 700;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 600;
+    }
+    .container {
+      width: min(1040px, calc(100% - 40px));
+      margin: 36px auto 64px;
+      display: grid;
+      gap: 28px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px 32px;
+      box-shadow: 0 6px 20px rgba(23, 34, 45, 0.05);
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: var(--navy);
+    }
+    .card .sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .sig-preview-box {
+      background: #fafafa;
+      border: 1px dashed #c8c1b8;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 18px;
+      overflow-x: auto;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 6px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .btn:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+    .btn.outline {
+      background: #fff;
+      color: var(--red);
+    }
+    .btn.outline:hover {
+      background: var(--red);
+      color: #fff;
+    }
+    .status {
+      font-size: 13px;
+      font-weight: 600;
+      color: #285849;
+    }
+    .steps-note {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: #f9f6f2;
+      border-left: 3px solid var(--red);
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .qr-item {
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+      background: #fcfbfa;
+    }
+    .qr-item img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      margin: 0 auto 14px;
+      display: block;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    .qr-item h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .qr-item p {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .template-box {
+      width: 100%;
+      min-height: 155px;
+      padding: 14px;
+      font: 13.5px/1.6 'Segoe UI', Arial, sans-serif;
+      border: 1px solid #d4cfc7;
+      border-radius: 8px;
+      background: #fbfaf8;
+      color: var(--ink);
+      margin-bottom: 12px;
+      resize: vertical;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 760px) {
+      .two-col { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p>Recursos listos para usar · Rubén Muñoz Valadés</p>
+  <h1>Kit de Promoción, Firma de Gmail y Códigos QR</h1>
+</header>
+
+<main class="container">
+
+  <!-- 1. FIRMA DE GMAIL -->
+  <section class="card">
+    <h2>1. Firma profesional para Gmail (HTML enriquecido)</h2>
+    <p class="sub">Diseñada con tus colores corporativos, logotipo oficial y enlaces directos a tu web, vídeo de presentación, catálogo de cursos y descarga de CV.</p>
+
+    <div class="sig-preview-box" id="signature-render">
+      <!-- ESTA TABLA ES LA FIRMA EXACTA QUE SE COPIA A GMAIL -->
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family:'Segoe UI',Arial,sans-serif;color:#232930;line-height:1.45;font-size:13px;border-collapse:collapse;">
+        <tr>
+          <td style="vertical-align:top;padding-right:16px;border-right:3px solid #ad4437;">
+            <a href="https://docente.rubenmunozdocente.digital/" target="_blank" style="text-decoration:none;">
+              <img src="https://docente.rubenmunozdocente.digital/assets/imagen-1.webp" alt="RM Rubén Muñoz Docente" width="59" height="66" style="display:block;background:#f7d2b2;border-radius:6px;border:0;">
+            </a>
+          </td>
+          <td style="vertical-align:top;padding-left:16px;">
+            <div style="font-size:16px;font-weight:700;color:#17222d;letter-spacing:0.3px;">Rubén Muñoz Valadés</div>
+            <div style="font-size:12px;font-weight:600;color:#ad4437;text-transform:uppercase;letter-spacing:1px;margin-top:2px;">Docente FPE · SSCE0110 &nbsp;|&nbsp; Gestión Comercial · COM314_3</div>
+            <div style="font-size:12px;color:#5d646b;margin-top:4px;">Ofimática · Excel · Inteligencia Artificial Aplicada · Comercio y Ventas · Diseño Instruccional</div>
+            <div style="margin-top:8px;font-size:12px;color:#232930;">
+              📍 Mairena del Aljarafe (Sevilla) &nbsp;·&nbsp;
+              📞 <a href="https://wa.me/34607649323" style="color:#232930;text-decoration:none;font-weight:600;">607 649 323 (WhatsApp)</a> &nbsp;·&nbsp;
+              ✉️ <a href="mailto:rumuva1492@gmail.com" style="color:#232930;text-decoration:none;">rumuva1492@gmail.com</a>
+            </div>
+            <div style="margin-top:10px;padding-top:8px;border-top:1px solid #e4e2de;font-size:12px;">
+              <a href="https://docente.rubenmunozdocente.digital/" target="_blank" style="display:inline-block;background:#ad4437;color:#ffffff;text-decoration:none;padding:5px 11px;border-radius:4px;font-weight:700;font-size:11px;letter-spacing:0.5px;margin-right:8px;">🌐 VER WEB Y PORTFOLIO ↗</a>
+              <a href="https://docente.rubenmunozdocente.digital/#video" target="_blank" style="color:#ad4437;text-decoration:none;font-weight:600;margin-right:10px;">▶ Vídeo (1 min)</a>
+              <a href="https://docente.rubenmunozdocente.digital/#cursos" target="_blank" style="color:#ad4437;text-decoration:none;font-weight:600;margin-right:10px;">📚 6 Programas (50 h)</a>
+              <a href="https://docente.rubenmunozdocente.digital/CV_Ruben_Munoz_Valades.pdf" target="_blank" style="color:#17222d;text-decoration:none;font-weight:600;">📄 Descargar CV (PDF)</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" type="button" id="copy-sig-btn">📋 Copiar firma visual para Gmail</button>
+      <span class="status" id="sig-status"></span>
+    </div>
+
+    <div class="steps-note">
+      <strong>Cómo pegarla en tu Gmail en 30 segundos:</strong><br>
+      1. Pulsa el botón rojo <strong>«Copiar firma visual para Gmail»</strong> de arriba.<br>
+      2. En Gmail, haz clic arriba a la derecha en el icono del engranaje <strong>⚙️ Configuración → Ver todos los ajustes</strong>.<br>
+      3. Baja hasta el apartado <strong>«Firma»</strong>, pulsa <strong>«+ Crear»</strong>, haz clic en el cuadro de texto y pulsa <strong><code>Ctrl + V</code></strong> (se pegará con logotipo, colores y botones).<br>
+      4. Baja al final de la página de Gmail y pulsa <strong>«Guardar cambios»</strong>.
+    </div>
+  </section>
+
+  <!-- 2. CÓDIGOS QR -->
+  <section class="card">
+    <h2>2. Códigos QR de alta resolución (`1000 × 1000 px`)</h2>
+    <p class="sub">Apuntan directamente a <code>https://docente.rubenmunozdocente.digital/</code> con nivel alto de corrección de errores. Ideales para insertar en la esquina de tu CV impreso, tarjetas de visita o presentaciones en el aula.</p>
+
+    <div class="qr-grid">
+      <div class="qr-item">
+        <img src="qr-web-ruben-munoz-logo.png" alt="Código QR con logotipo RM de Rubén Muñoz">
+        <h3>QR Corporativo (con tu logo RM)</h3>
+        <p>Con insignia central RM y colores corporativos.</p>
+        <a class="btn" href="qr-web-ruben-munoz-logo.png" download="QR_Ruben_Munoz_Docente_Logo.png">⬇ Descargar PNG con Logo</a>
+      </div>
+
+      <div class="qr-item">
+        <img src="qr-web-ruben-munoz.png" alt="Código QR clásico de Rubén Muñoz">
+        <h3>QR Clásico Minimalista</h3>
+        <p>Versión limpia en azul marino oscuro para tamaños muy pequeños.</p>
+        <a class="btn outline" href="qr-web-ruben-munoz.png" download="QR_Ruben_Munoz_Docente.png">⬇ Descargar PNG Clásico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PLANTILLAS DE MENSAJES -->
+  <section class="card">
+    <h2>3. Textos listos para copiar y enviar</h2>
+    <p class="sub">Mensajes redactados para presentar tu web a centros de formación, publicar en LinkedIn o compartir por WhatsApp.</p>
+
+    <div class="two-col">
+      <div>
+        <h3 style="margin-top:0;font-size:16px;">✉️ Correo a Centros de Formación / Consultoras FPE</h3>
+        <textarea class="template-box" id="tpl-email" readonly>Asunto: Docente FPE acreditado (SSCE0110 / COM314_3) – Ofimática, Excel, IA y Comercio en Sevilla
+
+Estimado equipo de Formación:
+
+Soy Rubén Muñoz Valadés, docente de Formación Profesional para el Empleo acreditado con el certificado SSCE0110 y competencias demostradas en Gestión Comercial de Ventas (COM314_3), residente en Mairena del Aljarafe (Sevilla).
+
+Cuento con experiencia impartiendo acciones formativas de ofimática, Excel e inteligencia artificial aplicada (Ayuntamiento de Mairena del Aljarafe y Dabo Consulting), así como en diseño instruccional y elaboración de materiales didácticos.
+
+Les comparto mi web y portfolio docente, donde pueden ver en 1 minuto mi vídeo de presentación, explorar muestras interactivas de mis actividades y descargar 6 programas formativos de 50 h listos para impartir:
+
+👉 https://docente.rubenmunozdocente.digital/
+
+Quedo a su entera disposición para colaborar en próximas acciones formativas en modalidad presencial (Sevilla y Aljarafe) o aula virtual.
+
+Un cordial saludo,
+Rubén Muñoz Valadés
+Tel. / WhatsApp: 607 649 323
+https://docente.rubenmunozdocente.digital/</textarea>
+        <button class="btn outline" type="button" data-copy-target="tpl-email">📋 Copiar correo para centros</button>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0;font-size:16px;">💼 Publicación para LinkedIn / WhatsApp</h3>
+        <textarea class="template-box" id="tpl-social" readonly>¡Hola! Os presento mi nuevo espacio web y portfolio como Docente de Formación Profesional para el Empleo (SSCE0110) en Sevilla y el Aljarafe:
+
+🌐 https://docente.rubenmunozdocente.digital/
+
+En él he reunido:
+✅ Muestras interactivas de cómo planteo mis clases (Excel práctico, IA aplicada en el aula, ofimática desde el primer día, atención al cliente y diseño instruccional).
+✅ Catálogo de 6 programas formativos de 50 horas en PDF listos para adaptar e impartir en centros de formación, ayuntamientos y empresas.
+✅ Mi acreditación profesional en Gestión Comercial de Ventas (COM314_3) y presentación en vídeo.
+
+Si representas a un centro de formación o entidad de empleo y buscas un docente cercano, práctico y orientado a la empleabilidad, ¡estaremos encantados de hablar!
+
+#FPE #DocenteFPE #SSCE0110 #Sevilla #FormacionParaElEmpleo #Ofimatica #Excel #InteligenciaArtificial #ComercioYVentas</textarea>
+        <button class="btn outline" type="button" data-copy-target="tpl-social">📋 Copiar texto para LinkedIn / WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  document.getElementById('copy-sig-btn').addEventListener('click', async () => {
+    const sigNode = document.getElementById('signature-render');
+    const status = document.getElementById('sig-status');
+    try {
+      const html = sigNode.innerHTML.trim();
+      const text = sigNode.innerText.trim();
+      if (window.ClipboardItem && navigator.clipboard?.write) {
+        const item = new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        });
+        await navigator.clipboard.write([item]);
+      } else {
+        const range = document.createRange();
+        range.selectNodeContents(sigNode);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand('copy');
+        sel.removeAllRanges();
+      }
+      status.textContent = '✅ ¡Firma copiada! Ahora ve a Ajustes de Gmail y pulsa Ctrl + V.';
+    } catch (e) {
+      const range = document.createRange();
+      range.selectNodeContents(sigNode);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      status.textContent = '✅ Firma seleccionada y copiada. Pégala con Ctrl + V en Gmail.';
+    }
+  });
+
+  document.querySelectorAll('[data-copy-target]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const box = document.getElementById(btn.dataset.copyTarget);
+      box.select();
+      await navigator.clipboard.writeText(box.value);
+      const original = btn.textContent;
+      btn.textContent = '✅ ¡Copiado al portapapeles!';
+      setTimeout(() => { btn.textContent = original; }, 2500);
+    });
+  });
+</script>
+</body>
+</html>
