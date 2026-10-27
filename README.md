@@ -2,6 +2,7 @@
 
 🌐 **Web y Portfolio Docente:** [https://docente.rubenmunozdocente.digital/](https://docente.rubenmunozdocente.digital/)  
 ▶️ **Vídeo de Presentación en YouTube (1 min):** [https://youtu.be/hmVcdfkkZPk](https://youtu.be/hmVcdfkkZPk)  
+📱 **YouTube Short (Vertical 9:16):** [https://youtube.com/shorts/Rw0hQTTwMq8](https://youtube.com/shorts/Rw0hQTTwMq8)  
 💼 **LinkedIn:** [https://www.linkedin.com/in/ruben-munoz-docente/](https://www.linkedin.com/in/ruben-munoz-docente/)
 
 [![Ver vídeo de presentación de Rubén Muñoz Valadés en YouTube](https://docente.rubenmunozdocente.digital/assets/video-poster.webp)](https://youtu.be/hmVcdfkkZPk)
