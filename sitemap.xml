@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://docente.rubenmunozdocente.digital/</loc><lastmod>2026-10-27</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://docente.rubenmunozdocente.digital/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://docente.rubenmunozdocente.digital/assets/og-ruben-munoz-docente.jpg</video:thumbnail_loc>
+      <video:title>Presentación docente de Rubén Muñoz Valadés — Docente FPE en Sevilla</video:title>
+      <video:description>Presentación profesional de Rubén Muñoz Valadés, docente de Formación Profesional para el Empleo (SSCE0110) en Sevilla y Aljarafe: ofimática, Excel, IA aplicada, comercio y ventas.</video:description>
+      <video:content_loc>https://docente.rubenmunozdocente.digital/assets/presentacion.mp4</video:content_loc>
+      <video:duration>77</video:duration>
+      <video:publication_date>2026-10-26T15:30:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
   <url><loc>https://docente.rubenmunozdocente.digital/sobre-mi/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://docente.rubenmunozdocente.digital/acreditacion-comercial/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://docente.rubenmunozdocente.digital/contacto/</loc><lastmod>2026-10-27</lastmod></url>
