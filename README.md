@@ -12,7 +12,7 @@
 ## Especialidades Formativas
 - **Docencia de la Formación Profesional para el Empleo (`SSCE0110`)** y diseño instruccional.
 - **Gestión Comercial de Ventas (`COM314_3`)**, atención al cliente y comunicación comercial.
-- **Inteligencia Artificial Aplicada a la Empresa (`Ref. AGI 41411404`)** — Diploma expedido por la **Cámara de Comercio de Sevilla** (junio–julio 2026).
+- **«IA: Del conocimiento básico a la creación de soluciones» (`120 horas · Ref. AGI 41411404`)** — Diploma expedido por la **Cámara de Comercio de Sevilla** en Bormujos (junio–julio 2026).
 - **Ofimática práctica, Excel e Inteligencia Artificial aplicada** para administraciones públicas, centros de formación y empresas en Sevilla y el Aljarafe.
 
 ## Catálogo de 6 Programas Formativos (50 horas · PDF)
