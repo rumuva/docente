@@ -35,3 +35,13 @@ const courseNames={"ia": "Inteligencia Artificial Aplicada", "ofimatica": "OfimÃ
 const courseParam=new URLSearchParams(location.search).get('curso');
 const requestedCourse=courseNames[courseParam];
 if(requestedCourse && document.getElementById('contact-form')){const form=document.getElementById('contact-form');if(courseParam==='ventas'||courseParam==='marketing')form.elements.namedItem('reason').value='FormaciÃ³n en comercio, ventas y marketing';form.elements.namedItem('message').value='Me interesa el programa '+requestedCourse+'. Mi entidad y necesidades son: ';saveContactDraft();}
+
+if(location.hostname==='docente.rubenmunozdocente.digital'){
+  if(!sessionStorage.getItem('rm_visited')){
+    sessionStorage.setItem('rm_visited','1');
+    new Image().src='https://hits.sh/docente.rubenmunozdocente.digital/visitas-web.svg';
+  }
+  document.querySelectorAll('[data-download-cv],a[href$="CV_Ruben_Munoz_Valades.pdf"]').forEach(a=>{
+    a.addEventListener('click',()=>{new Image().src='https://hits.sh/docente.rubenmunozdocente.digital/descargas-cv.svg';});
+  });
+}
