@@ -35,13 +35,97 @@ const courseNames={"ia": "Inteligencia Artificial Aplicada", "ofimatica": "Ofim�
 const courseParam=new URLSearchParams(location.search).get('curso');
 const requestedCourse=courseNames[courseParam];
 if(requestedCourse && document.getElementById('contact-form')){const form=document.getElementById('contact-form');if(courseParam==='ventas'||courseParam==='marketing')form.elements.namedItem('reason').value='Formación en comercio, ventas y marketing';form.elements.namedItem('message').value='Me interesa el programa '+requestedCourse+'. Mi entidad y necesidades son: ';saveContactDraft();}
-
-if(location.hostname==='docente.rubenmunozdocente.digital'){
+(function(){
+  if(location.hostname!=='docente.rubenmunozdocente.digital')return;
+  const TOPIC='rm_docente_visitas_84a9c2e1';
+  function detectDevice(){
+    const ua=navigator.userAgent||'';
+    let os='Otro SO';
+    if(/Windows/i.test(ua))os='Windows';
+    else if(/Android/i.test(ua))os='Móvil Android';
+    else if(/iPhone|iPad|iPod/i.test(ua))os='iPhone / iPad (iOS)';
+    else if(/Mac OS X/i.test(ua))os='Mac (macOS)';
+    else if(/Linux/i.test(ua))os='Linux';
+    let br='Navegador';
+    if(/Edg\//i.test(ua))br='Edge';
+    else if(/OPR\/|Opera/i.test(ua))br='Opera';
+    else if(/Chrome\//i.test(ua))br='Chrome';
+    else if(/Safari\//i.test(ua)&&!/Chrome/i.test(ua))br='Safari';
+    else if(/Firefox\//i.test(ua))br='Firefox';
+    const mob=/Mobi|Android|iPhone|iPad/i.test(ua)?'📱 Móvil':'💻 PC';
+    return mob+' · '+os+' ('+br+')';
+  }
+  function detectOrigin(){
+    const params=new URLSearchParams(location.search);
+    const utm=params.get('utm_source')||params.get('origen')||params.get('from');
+    if(utm)return 'Enlace ('+utm+')';
+    const ref=document.referrer||'';
+    if(!ref)return 'Directo / WhatsApp / QR';
+    if(/linkedin\.com|lnkd\.in/i.test(ref))return '💼 LinkedIn';
+    if(/youtube\.com|youtu\.be/i.test(ref))return '▶️ YouTube';
+    if(/google\./i.test(ref))return '🔍 Buscador Google';
+    if(/bing\./i.test(ref))return '🔍 Buscador Bing';
+    if(/github\.com/i.test(ref))return '🐙 GitHub';
+    if(/facebook\.com|instagram\.com|t\.co/i.test(ref))return '📱 Redes Sociales';
+    try{
+      const u=new URL(ref);
+      if(u.hostname===location.hostname)return 'Navegación interna ('+u.pathname+')';
+      return u.hostname;
+    }catch{return ref.slice(0,40)}
+  }
+  async function getGeo(){
+    try{
+      const c=sessionStorage.getItem('rm_geo_cache');
+      if(c)return JSON.parse(c);
+      const r=await fetch('https://ipwho.is/?lang=es');
+      const d=await r.json();
+      const geo={
+        ip:d.ip||'Desconocida',
+        city:d.city||'Desconocida',
+        region:d.region||'',
+        country:d.country||'España',
+        isp:(d.connection&&(d.connection.org||d.connection.isp))||d.org||'Proveedor estándar'
+      };
+      sessionStorage.setItem('rm_geo_cache',JSON.stringify(geo));
+      return geo;
+    }catch{
+      return {ip:'No disponible',city:'Desconocida',region:'',country:'',isp:'No disponible'};
+    }
+  }
+  async function sendLog(actionLabel){
+    try{
+      const geo=await getGeo();
+      const payload={
+        ts:new Date().toISOString(),
+        accion:actionLabel,
+        pagina:location.pathname+(location.hash||''),
+        origen:detectOrigin(),
+        dispositivo:detectDevice(),
+        pantalla:window.screen.width+'x'+window.screen.height,
+        idioma:navigator.language||'es-ES',
+        ciudad:geo.city+(geo.region?', '+geo.region:'')+(geo.country?' ('+geo.country+')':''),
+        isp:geo.isp,
+        ip:geo.ip
+      };
+      fetch('https://ntfy.sh/'+TOPIC,{
+        method:'POST',
+        body:JSON.stringify(payload)
+      }).catch(()=>{});
+    }catch{}
+  }
+  const pageKey='rm_logged_'+location.pathname;
   if(!sessionStorage.getItem('rm_visited')){
     sessionStorage.setItem('rm_visited','1');
     new Image().src='https://hits.sh/docente.rubenmunozdocente.digital/visitas-web.svg';
   }
+  if(!sessionStorage.getItem(pageKey)){
+    sessionStorage.setItem(pageKey,'1');
+    sendLog('🌐 Visitó '+location.pathname);
+  }
   document.querySelectorAll('[data-download-cv],a[href$="CV_Ruben_Munoz_Valades.pdf"]').forEach(a=>{
-    a.addEventListener('click',()=>{new Image().src='https://hits.sh/docente.rubenmunozdocente.digital/descargas-cv.svg';});
+    a.addEventListener('click',()=>{
+      new Image().src='https://hits.sh/docente.rubenmunozdocente.digital/descargas-cv.svg';
+      sendLog('📄 Descargó tu CV en PDF');
+    });
   });
-}
+})();
